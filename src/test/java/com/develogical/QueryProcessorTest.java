@@ -27,6 +27,6 @@ public class QueryProcessorTest {
 
     @Test
     public void knowsAboutGuay() throws Exception {
-        assertThat(queryProcessor.process("guay"), containsString("guay"));
+        assertThat(queryProcessor.process("guay"), containsString("poop"));
     }
 }
