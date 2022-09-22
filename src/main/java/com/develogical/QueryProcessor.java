@@ -1,4 +1,5 @@
 package com.develogical;
+import java.util.ArrayList;
 
 public class QueryProcessor {
 
@@ -10,6 +11,27 @@ public class QueryProcessor {
         }
         else if (query.toLowerCase().contains("guay")) {
             return "Guay is the spanish word for cool. Like Yonah. Yonah is very cool (guay).";
+        }
+        else if (query.toLowerCase().contains("largest number")) {
+            String[] split = query.split(" ");
+            ArrayList<Integer> list = new ArrayList<>();
+            for (String str : split) {
+                int number;
+                try {
+                    number = Integer.parseInt(str);
+                    list.add(number);
+                } catch (NumberFormatException e) {};
+            }
+            if (list.isEmpty()) {
+                return "No number found";
+            }
+            int max = list.get(0);
+            for (int i : list) {
+                if (i > max) {
+                    max = i;
+                }
+            }
+            return "The largest number is " + max;
         }
         return "";
     }
