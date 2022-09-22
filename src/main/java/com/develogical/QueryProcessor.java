@@ -12,7 +12,7 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("guay")) {
             return "Guay is the spanish word for cool. Like Yonah. Yonah is very cool (guay).";
         }
-        else if (query.toLowerCase().contains("largest number")) {
+        else if (query.toLowerCase().contains("largest")) {
             String[] split = query.split(" ");
             ArrayList<Integer> list = new ArrayList<>();
             for (String str : split) {
