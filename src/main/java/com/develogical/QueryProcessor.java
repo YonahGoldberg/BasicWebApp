@@ -33,6 +33,9 @@ public class QueryProcessor {
             }
             return "The largest number is " + max;
         }
+        else if (query.toLowerCase().contains("name")) {
+            return "Yonah is super cool";
+        }
         return "";
     }
 }
