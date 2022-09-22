@@ -35,7 +35,7 @@ public class QueryProcessor {
                     max = i;
                 }
             }
-            return "The largest number is " + max;
+            return max + "";
         }
         else if (query.toLowerCase().contains("name")) {
             return "Yonah is super cool";
@@ -54,7 +54,7 @@ public class QueryProcessor {
                     }
                 }
                 if (square && cube) {
-                    return i + " is a square and a cube!";
+                    return "" + i;
                 }
             }
             return "There are no squares or cubes here";
@@ -65,7 +65,7 @@ public class QueryProcessor {
             for (int i : list) {
                 mult *= i;
             }
-            return "The answer is " + mult;
+            return "" + mult;
         }
         return "";
     }
