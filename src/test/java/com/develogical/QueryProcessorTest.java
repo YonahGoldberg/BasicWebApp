@@ -29,4 +29,9 @@ public class QueryProcessorTest {
     public void knowsAboutGuay() throws Exception {
         assertThat(queryProcessor.process("guay"), containsString("guay"));
     }
+
+    @Test
+    public void add() throws Exception {
+        assertThat(queryProcessor.process("largest 2 3"), containsString("3"));
+    }
 }
