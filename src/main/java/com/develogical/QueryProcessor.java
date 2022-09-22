@@ -59,6 +59,14 @@ public class QueryProcessor {
             }
             return "There are no squares or cubes here";
         }
+        else if (query.toLowerCase().contains("multiplied")) {
+            ArrayList<Integer> list = parseNumbers(query.toLowerCase());
+            int mult = 1;
+            for (int i : list) {
+                mult *= i;
+            }
+            return "The answer is " + mult;
+        }
         return "";
     }
 }
