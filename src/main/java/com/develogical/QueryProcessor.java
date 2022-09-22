@@ -2,6 +2,18 @@ package com.develogical;
 import java.util.ArrayList;
 
 public class QueryProcessor {
+    public ArrayList<Integer> parseNumbers(String query) {
+        String[] split = query.split(" ");
+        ArrayList<Integer> list = new ArrayList<>();
+        for (String str : split) {
+            int number;
+            try {
+                number = Integer.parseInt(str);
+                list.add(number);
+            } catch (NumberFormatException e) {};
+        }
+        return list;
+    }
 
     public String process(String query) {
         if (query.toLowerCase().contains("shakespeare")) {
@@ -13,15 +25,7 @@ public class QueryProcessor {
             return "Guay is the spanish word for cool. Like Yonah. Yonah is very cool (guay).";
         }
         else if (query.toLowerCase().contains("largest")) {
-            String[] split = query.split(" ");
-            ArrayList<Integer> list = new ArrayList<>();
-            for (String str : split) {
-                int number;
-                try {
-                    number = Integer.parseInt(str);
-                    list.add(number);
-                } catch (NumberFormatException e) {};
-            }
+            ArrayList<Integer> list = parseNumbers(query.toLowerCase());
             if (list.isEmpty()) {
                 return "No number found";
             }
@@ -35,6 +39,25 @@ public class QueryProcessor {
         }
         else if (query.toLowerCase().contains("name")) {
             return "Yonah is super cool";
+        }
+        else if (query.toLowerCase().contains("square and cube")) {
+            ArrayList<Integer> list = parseNumbers(query.toLowerCase());
+            for (int i : list) {
+                boolean square = false;
+                boolean cube = false;
+                for (int j = 0; j < i; j++) {
+                    if (j * j == i) {
+                        square = true;
+                    }
+                    if (j * j * j == i) {
+                        cube = true;
+                    }
+                }
+                if (square && cube) {
+                    return i + " is a square and a cube!";
+                }
+            }
+            return "There are no squares or cubes here";
         }
         return "";
     }
