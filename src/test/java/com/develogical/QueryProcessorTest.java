@@ -38,4 +38,8 @@ public class QueryProcessorTest {
     public void squareAndCube() throws Exception {
         assertThat(queryProcessor.process("which of the following is a square and a cube 64 8"), containsString("64"));
     }
+
+    public void mult() throws Exception {
+        assertThat(queryProcessor.process("multiplied 5 3"), containsString("15"));
+    }
 }
