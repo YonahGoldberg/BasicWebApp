@@ -40,7 +40,7 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("name")) {
             return "Yonah is super cool";
         }
-        else if (query.toLowerCase().contains("square and cube")) {
+        else if (query.toLowerCase().contains("square and a cube")) {
             ArrayList<Integer> list = parseNumbers(query.toLowerCase());
             for (int i : list) {
                 boolean square = false;
