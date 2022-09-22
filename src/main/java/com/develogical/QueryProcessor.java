@@ -70,6 +70,9 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("eiffel")) {
             return "paris";
         }
+        else if (query.toLowerCase().contains("prime minister")) {
+            return "1721";
+        }
         return "";
     }
 }
