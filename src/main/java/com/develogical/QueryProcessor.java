@@ -67,6 +67,9 @@ public class QueryProcessor {
             }
             return "" + mult;
         }
+        else if (query.toLowerCase().contains("eiffel")) {
+            return "paris";
+        }
         return "";
     }
 }
